@@ -113,3 +113,24 @@ fun BodyHome(
         }
     }
 }
+
+@Composable
+fun ListSiswa(
+    itemSiswa: List<Siswa>,
+
+    //edit 1 : Tambahkan parameter onSiswaClick
+    onSiswaClick: (Siswa) -> Unit,
+    modifier: Modifier = Modifier
+){
+    LazyColumn(modifier = modifier){
+        items(items = itemSiswa, key = { it.id }){ person ->
+            DataSiswa(
+                siswa = person,
+                modifier = Modifier
+                    .padding(dimensionResource(id = R.dimen.padding_small))
+                    .clickable { onSiswaClick(person) }
+            )
+        }
+    }
+}
+

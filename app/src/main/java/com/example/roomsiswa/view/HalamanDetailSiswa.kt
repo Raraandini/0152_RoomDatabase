@@ -202,3 +202,24 @@ fun DetailDataSiswa(
     }
 }
 
+@Composable
+fun BarisDetailData(
+    labelResID: Int,
+    itemDetail: String,
+    modifier: Modifier = Modifier
+) {
+    Row(
+        modifier = modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text(
+            text = stringResource(labelResID),
+            style = MaterialTheme.typography.bodyLarge
+        )
+
+        Text(
+            text = itemDetail,
+            style = MaterialTheme.typography.bodyLarge
+        )
+    }
+}
